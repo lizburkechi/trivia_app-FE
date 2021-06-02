@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TriviaCardList from "./TriviaCardList";
 import "./app.css";
 import axios from "axios";
 import Timer from "./Timer";
 import Footer from "./Footer";
+import Home from './Home';
 
 
 
@@ -58,9 +60,9 @@ function App() {
       });
   }
   return (
-    <>
+    <div className="App">
+      <h1 className="title">Versus Trivia</h1>
       <form className="header" onSubmit={handleSubmit}>
-        <h1 className="title">Versus Trivia</h1>
         <div className="form-group">
           <label htmlFor="category">Select Category</label>
           <select id="category" ref={categoryEl}>
@@ -96,7 +98,8 @@ function App() {
         <Timer />
         </Footer>
       </div>
-    </>
+    </div>
+    
   );
 }
 export default App;
