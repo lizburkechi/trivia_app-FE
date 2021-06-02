@@ -58,17 +58,17 @@ if (counter === 0) {
   }
 
   return (
-    <div class="clock-container">
-      <div class="time">
-        <span class="minute">{minute}</span>
+    <div className="clock-container">
+      <div className="time">
+        <span className="minute">{minute}</span>
         <span>:</span>
-        <span class="second">{second}</span>
+        <span className="second">{second}</span>
       </div>
-      <div class="buttons">
-        <button onClick={() => setIsActive(!isActive)} class="start">
+      <div className="buttons">
+        <button onClick={() => setIsActive(!isActive)} className="start">
           {isActive ? "Pause" : "Start"}
         </button>
-        <button onClick={stopTimer} class="reset">
+        <button onClick={stopTimer} className="reset">
           Reset
         </button>
       </div>

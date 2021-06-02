@@ -129,3 +129,7 @@ transform: rotateY(180deg)
     background-color: turquoise;
     color: white;            
   }
+
+  .button-toolbar {
+    align-items: left;
+  }

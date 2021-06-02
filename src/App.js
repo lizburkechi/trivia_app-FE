@@ -6,6 +6,7 @@ import Timer from "./Timer";
 import Footer from "./Footer";
 
 
+
 function App() {
 
   const [triviaCards, setTriviaCards] = useState([]);
@@ -90,7 +91,7 @@ function App() {
       <div className="container">
         <TriviaCardList triviaCards={triviaCards} />
       </div>
-      <div classname="footer-container">
+      <div className="footer-container">
         <Footer>
         <Timer />
         </Footer>
