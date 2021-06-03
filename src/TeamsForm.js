@@ -2,10 +2,16 @@ import React from "react";
 
 class TeamsForm extends React.Component {
     state = {
+     team1: '',
+     team2: '',
      player1: '',
      player2: '',
      player3: '',
-     player4: '',   
+     player4: '',  
+     player5: '',
+     player6: '',
+     player7: '',
+     player8: ''  
     }
 
     change = e => {
@@ -27,7 +33,7 @@ class TeamsForm extends React.Component {
                 <input
                 name="team"
                 placeholder='Team Name' 
-                value={this.state.team} 
+                value={this.state.team1} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
@@ -68,35 +74,35 @@ class TeamsForm extends React.Component {
                 <input
                 name="team"
                 placeholder='Team Name' 
-                value={this.state.team} 
+                value={this.state.team2} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
                 <input
                 name="player1"
                 placeholder='player 1' 
-                value={this.state.player1} 
+                value={this.state.player5} 
                 onChange={e => this.change(e)}
                 />
                 <br /> 
                 <input
                 name="player2"
                 placeholder='player 2' 
-                value={this.state.player2} 
+                value={this.state.player6} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
                 <input
                 name="player3"
                 placeholder='player 3' 
-                value={this.state.player3} 
+                value={this.state.player7} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
                 <input
                 name="player4"
                 placeholder='player 4' 
-                value={this.state.player4} 
+                value={this.state.player8} 
                 onChange={e => this.change(e)} 
                 />
                 <br />

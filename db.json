@@ -1,19 +1,51 @@
 {
-  "teams": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "games": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "players": {
-    "name": "typicode"
-  }
-}
+  "Game": [
+    {"Team1": { 
+      "team_name1": " ",
+       "players":[
+           {
+             "id": 1,
+             "name": " "
+           },
+           {
+             "id": 2,
+             "name": " "
+           },
+           {
+             "id": 3,
+             "name": " "
+           },
+           {
+             "id": 4,
+             "name": " "
+           }
+         ], 
+   "score": 0
+       }
+     },
+ {"Team2": { 
+     "team_name2": " ",
+     "players":[
+           {
+             "id": 5,
+             "name": " "
+           },
+           {
+             "id": 6,
+             "name": " "
+           },
+           {
+             "id": 7,
+             "name": " "
+           },
+           {
+             "id": 8,
+             "name": " "
+           }
+         ], 
+     "score": 0
+       }
+     }
+   ]
+ } 
+ 
