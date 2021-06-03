@@ -1,16 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from "react-router-dom";
 import TriviaCardList from "./TriviaCardList";
 import "./app.css";
 import axios from "axios";
 import Timer from "./Timer";
 import Footer from "./Footer";
-import Home from './Home';
-
-
+import Home from "./Home";
+import TeamsForm from "./TeamsForm";
 
 function App() {
-
   const [triviaCards, setTriviaCards] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -18,8 +16,7 @@ function App() {
   const amountEl = useRef();
 
   useEffect(() => {
-    axios
-    .get("https://opentdb.com/api_category.php").then((response) => {
+    axios.get("https://opentdb.com/api_category.php").then((response) => {
       setCategories(response.data.trivia_categories);
     });
   }, []);
@@ -59,47 +56,56 @@ function App() {
         );
       });
   }
+
   return (
     <div className="App">
-      <h1 className="title">Versus Trivia</h1>
-      <form className="header" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="category">Select Category</label>
-          <select id="category" ref={categoryEl}>
-            {categories.map((category) => {
-              return (
-                <option value={category.id} key={category.id}>
-                  {category.name}
-                </option>
-              );
-            })}
-          </select>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/teams">
+        <TeamsForm />
+        </Route>
+        <Route exact path="/trivia">
+        <form className="header" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="category">Select Category</label>
+            <select id="category" ref={categoryEl}>
+              {categories.map((category) => {
+                return (
+                  <option value={category.id} key={category.id}>
+                    {category.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="amount">Number of Questions</label>
+            <input
+              type="number"
+              id="amount"
+              min="1"
+              step="1"
+              defaultValue={8}
+              ref={amountEl}
+            />
+          </div>
+          <div className="form-group">
+            <button className="btn">Deal Cards</button>
+          </div>
+        </form>
+        <div className="container">
+          <TriviaCardList triviaCards={triviaCards} />
         </div>
-        <div className="form-group">
-          <label htmlFor="amount">Number of Questions</label>
-          <input
-            type="number"
-            id="amount"
-            min="1"
-            step="1"
-            defaultValue={8}
-            ref={amountEl}
-          />
+        <div className="footer-container">
+          <Footer>
+            <Timer />
+          </Footer>
         </div>
-        <div className="form-group">
-          <button className="btn">Deal Cards</button>
-        </div>
-      </form>
-      <div className="container">
-        <TriviaCardList triviaCards={triviaCards} />
-      </div>
-      <div className="footer-container">
-        <Footer>
-        <Timer />
-        </Footer>
-      </div>
+        </Route>
+      </Switch>
     </div>
-    
   );
 }
 export default App;

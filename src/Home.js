@@ -2,9 +2,12 @@ import React from "react";
 
 const Home = () => {
     return(
-        <div className="home-page">
-            <h1>Versus Trivia</h1> 
-        </div>
+        <header>
+    <h1>Versus Trivia</h1> 
+    <a className="button" href="/teams">
+    Pick Teams!
+    </a>
+        </header>
     )
 }
 
