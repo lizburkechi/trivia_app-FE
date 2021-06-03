@@ -31,7 +31,7 @@ class TeamsForm extends React.Component {
             <form className="team1-form">
                 <h2>Team 1</h2>
                 <input
-                name="team"
+                name="team1"
                 placeholder='Team Name' 
                 value={this.state.team1} 
                 onChange={e => this.change(e)} 
@@ -72,35 +72,35 @@ class TeamsForm extends React.Component {
             <form classname="team2-form">
                 <h2>Team 2</h2>
                 <input
-                name="team"
+                name="team2"
                 placeholder='Team Name' 
                 value={this.state.team2} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
                 <input
-                name="player1"
+                name="player5"
                 placeholder='player 1' 
                 value={this.state.player5} 
                 onChange={e => this.change(e)}
                 />
                 <br /> 
                 <input
-                name="player2"
+                name="player6"
                 placeholder='player 2' 
                 value={this.state.player6} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
                 <input
-                name="player3"
+                name="player7"
                 placeholder='player 3' 
                 value={this.state.player7} 
                 onChange={e => this.change(e)} 
                 />
                 <br />
                 <input
-                name="player4"
+                name="player8"
                 placeholder='player 4' 
                 value={this.state.player8} 
                 onChange={e => this.change(e)} 
