@@ -5,9 +5,9 @@ const Timer = () => {
 
   const timerPresets = {
     seconds: "00",
-    minutes: "02",
+    minutes: "01",
     active: false,
-    counter: 120
+    counter: 60
   }
 
   const [second, setSecond] = useState(timerPresets.seconds);
@@ -40,13 +40,6 @@ const Timer = () => {
       }, 1000);
     }
 
-
-    // build conditional form here
-console.log(counter)
-if (counter === 0) {
-  console.log("alert")
-}
-
     return () => clearInterval(intervalId);
   }, [isActive, counter]);
 
@@ -55,6 +48,10 @@ if (counter === 0) {
     setCounter(timerPresets.counter);
     setSecond(timerPresets.seconds);
     setMinute(timerPresets.minutes);
+  }
+
+  if (counter === -1) {
+    stopTimer()
   }
 
   return (

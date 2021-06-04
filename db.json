@@ -1,19 +1,49 @@
-{
-  "teams": [
+{"teams": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "games": [
+      "team-name": "Red",
+      "score": 0,
+      "player1": "Liz",
+      "player2": "Jacki",
+      "player3": "Obie",
+      "player4": "Larn"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "players": {
-    "name": "typicode"
-  }
+      "id": 2,
+      "team-name": "Blue",
+      "score": 0,
+      "player1": "Guilherme",
+      "player2": "Ernie",
+      "player3": "Bert",
+      "player4": "Oscar"
+    },
+    {
+        "id": 3,
+        "team-name": "Green",
+        "score": 0,
+        "player1": "Guilherme",
+        "player2": "Ernie",
+        "player3": "Bert",
+        "player4": "Oscar"
+      },
+      {
+        "id": 4,
+        "team-name": "Purple",
+        "score": 0,
+        "player1": "Guilherme",
+        "player2": "Ernie",
+        "player3": "Bert",
+        "player4": "Oscar"
+      },
+      {
+        "id": 5,
+        "team-name": "Black",
+        "score": 0,
+        "player1": "Guilherme",
+        "player2": "Ernie",
+        "player3": "Bert",
+        "player4": "Oscar"
+      }
+]
 }
+    

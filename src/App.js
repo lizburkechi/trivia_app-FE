@@ -7,6 +7,7 @@ import Timer from "./Timer";
 import Footer from "./Footer";
 import Home from "./Home";
 import TeamsForm from "./TeamsForm";
+import PointsCounter from "./PointsCounter"
 
 function App() {
   const [triviaCards, setTriviaCards] = useState([]);
@@ -57,6 +58,7 @@ function App() {
       });
   }
 
+
   return (
     <div className="App">
       <Switch>
@@ -64,7 +66,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/teams">
-        <TeamsForm />
+        <TeamsForm onSubmit={fields => this.onSubmit(fields)} />
         </Route>
         <Route exact path="/trivia">
         <form className="header" onSubmit={handleSubmit}>
@@ -86,6 +88,7 @@ function App() {
               type="number"
               id="amount"
               min="1"
+              max="8"
               step="1"
               defaultValue={8}
               ref={amountEl}
@@ -101,6 +104,7 @@ function App() {
         <div className="footer-container">
           <Footer>
             <Timer />
+            <PointsCounter />
           </Footer>
         </div>
         </Route>
