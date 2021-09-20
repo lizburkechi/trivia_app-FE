@@ -225,7 +225,8 @@ body {
 
 .choose-teams-title {
   font-family: "Sigmar One", cursive;
-  font-size: 6.5vw;
+  font-size: 6vw;
+  padding-top: 20px;
   text-align: center;
   color: rgb(75, 0, 130);
   -webkit-text-stroke-width: 0.5px;
