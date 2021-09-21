@@ -84,7 +84,7 @@ function App() {
               min="1"
               max="10"
               step="1"
-              defaultValue={8}
+              defaultValue={10}
               ref={amountEl}
             />
           </div>
