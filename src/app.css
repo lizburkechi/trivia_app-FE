@@ -233,28 +233,6 @@ body {
   -webkit-text-stroke-color: white;
 }
 
-.teams-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 165px;
-  /* background-color: turquoise; */
-  color: white;
-  /* box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3); */
-}
-
-.teams-header {
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: turquoise;
-  padding: 0 0.5rem;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-  font-weight: bold;
-}
-
 .points-btn {
   width: 150px;
   margin: auto;

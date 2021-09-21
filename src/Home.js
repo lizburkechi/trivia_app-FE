@@ -13,7 +13,7 @@ const Home = () => {
       </div>
      
       <div className="teams-btn-div">
-      <Link id="pick-teams-btn" className="btn btn-primary" href="/play-versus-trivia">
+      <Link id="pick-teams-btn" className="btn btn-primary" to="/play-versus-trivia">
         Lets Play!
       </Link>
       </div>
