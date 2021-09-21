@@ -6,7 +6,6 @@ import axios from "axios";
 import Timer from "./Timer";
 import Footer from "./Footer";
 import Home from "./Home";
-import TeamsForm from "./TeamsForm";
 import PointsCounter from "./PointsCounter"
 
 function App() {
@@ -17,8 +16,8 @@ function App() {
   const amountEl = useRef();
 
   useEffect(() => {
-    axios.get("https://opentdb.com/api_category.php").then((response) => {
-      setCategories(response.data.trivia_categories);
+    axios.get("https://opentdb.com/api_category.php").then((r) => {
+      setCategories(r.data.trivia_categories);
     });
   }, []);
   useEffect(() => {}, []);
@@ -58,21 +57,18 @@ function App() {
       });
   }
 
-
   return (
+     
     <div className="App">
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/teams">
-        <TeamsForm />
-        </Route>
-        <Route exact path="/trivia">
+      <Route exact path="/versus-trivia">
+        <Home />
+      </Route>
+      <Route exact path="/play-versus-trivia">
         <form className="header" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="category">Select Category</label>
-            <select id="category" ref={categoryEl}>
+              <select id="category" ref={categoryEl}>
               {categories.map((category) => {
                 return (
                   <option value={category.id} key={category.id}>
@@ -108,7 +104,7 @@ function App() {
           </Footer>
         </div>
         </Route>
-      </Switch>
+      </Switch>    
     </div>
   );
 }

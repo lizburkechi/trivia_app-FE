@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 const Home = () => {
   return (
@@ -12,9 +13,9 @@ const Home = () => {
       </div>
      
       <div className="teams-btn-div">
-      <a id="pick-teams-btn" className="btn btn-primary" href="/teams">
-        Pick Teams!
-      </a>
+      <Link id="pick-teams-btn" className="btn btn-primary" href="/play-versus-trivia">
+        Lets Play!
+      </Link>
       </div>
     </div>
   );
