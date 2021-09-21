@@ -82,7 +82,7 @@ function App() {
               type="number"
               id="amount"
               min="1"
-              max="8"
+              max="10"
               step="1"
               defaultValue={8}
               ref={amountEl}
