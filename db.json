@@ -1,48 +1,55 @@
 {"teams": [
     {
       "id": 1,
-      "team-name": "Red",
-      "score": 0,
-      "player1": "Liz",
-      "player2": "Jacki",
-      "player3": "Obie",
-      "player4": "Larn"
+      "team1": "Purple",
+      "player1": "Ben",
+      "player2": "Luther",
+      "player3": "Roberto",
+      "player4": "Ife",
+      "team2": "Green",
+      "player5": "Taj",
+      "player6": "Sinae",
+      "player7": "Alexis",
+      "player8": "Mia"
     },
     {
       "id": 2,
-      "team-name": "Blue",
-      "score": 0,
-      "player1": "Guilherme",
-      "player2": "Ernie",
-      "player3": "Bert",
-      "player4": "Oscar"
+      "team1": "Red",
+      "player1": "Liz",
+      "player2": "Jacki",
+      "player3": "Obie",
+      "player4": "Larn",
+      "team2": "Blue",
+      "player5": "Maya",
+      "player6": "Sam",
+      "player7": "Delance",
+      "player8": "Vaish"
     },
     {
         "id": 3,
-        "team-name": "Green",
-        "score": 0,
-        "player1": "Guilherme",
-        "player2": "Ernie",
-        "player3": "Bert",
-        "player4": "Oscar"
+        "team1": "Yellow",
+        "player1": "Simone",
+        "player2": "Wilma",
+        "player3": "Rafael",
+        "player4": "Kevin",
+        "team2": "Pink",
+        "player5": "Muhammad",
+        "player6": "Floyd",
+        "player7": "Trina",
+        "player8": "Kim"
       },
       {
         "id": 4,
-        "team-name": "Purple",
-        "score": 0,
-        "player1": "Guilherme",
-        "player2": "Ernie",
-        "player3": "Bert",
-        "player4": "Oscar"
-      },
-      {
-        "id": 5,
-        "team-name": "Black",
-        "score": 0,
-        "player1": "Guilherme",
-        "player2": "Ernie",
-        "player3": "Bert",
-        "player4": "Oscar"
+        "team1": "Orange",
+        "player1": "Angel",
+        "player2": "Leo",
+        "player3": "Julia",
+        "player4": "Emma",
+        "team2": "Indigo",
+        "player5": "Morgan",
+        "player6": "Dwayne",
+        "player7": "Keisha",
+        "player8": "Sean"
       }
 ]
 }

@@ -66,7 +66,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/teams">
-        <TeamsForm onSubmit={fields => this.onSubmit(fields)} />
+        <TeamsForm />
         </Route>
         <Route exact path="/trivia">
         <form className="header" onSubmit={handleSubmit}>
