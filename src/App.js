@@ -4,9 +4,7 @@ import TriviaCardList from "./TriviaCardList";
 import "./app.css";
 import axios from "axios";
 import Timer from "./Timer";
-import Footer from "./Footer";
 import Home from "./Home";
-import PointsCounter from "./PointsCounter"
 
 function App() {
   const [triviaCards, setTriviaCards] = useState([]);
@@ -94,14 +92,11 @@ function App() {
             <button className="btn">Deal Cards</button>
           </div>
         </form>
-        <div className="container">
+        <div className="card-container">
           <TriviaCardList triviaCards={triviaCards} />
         </div>
-        <div className="footer-container">
-          <Footer>
-            <Timer />
-            <PointsCounter />
-          </Footer>
+        <div className="timer-container">
+          <Timer />
         </div>
         </Route>
       </Switch>    
