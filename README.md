@@ -25,12 +25,15 @@
   </code>
   <br />
   <br />
-  
 
   <h3>Currently in Development:</h3>
   <li>Teams Scoreboard</li>
   <li>Auto-start timer (option) when cards are dealt</li>
   <li>General CSS Tidying</li>
+  
+  <h2>Screenshots</h2>
+  
+  
 
 
 
