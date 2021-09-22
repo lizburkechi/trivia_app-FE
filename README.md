@@ -33,6 +33,7 @@
   
   <h2>Screenshots</h2>
   
+  ![deal gif](https://user-images.githubusercontent.com/73612713/134404797-fb8925ff-cfbb-4601-9b3e-70604e8206b4.gif)
 
 
 
