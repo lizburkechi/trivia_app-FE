@@ -34,7 +34,9 @@
   <h2>Screenshots</h2>
   
   ![deal gif](https://user-images.githubusercontent.com/73612713/134404797-fb8925ff-cfbb-4601-9b3e-70604e8206b4.gif)
- <br />
+    <br />  
+    <br />  
+  
   ![flip gif](https://user-images.githubusercontent.com/73612713/134405991-5a5abd6d-31e9-446c-b4fb-4019346f4f5b.gif)
 
 
