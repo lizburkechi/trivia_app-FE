@@ -4,16 +4,15 @@
 
   <h2>Installation</h2>
   1. To install locally clone down to the directory of your choice. 
-  <br />
+ 
   
-    
      $ git clone git@github.com:lizburkechi/versus_trivia.git  
      $ cd versus_trivia  
      $ code . 
-
+  
   
   2. Install dependencies
-  <br />
+  
   <code>
       $ npm install  
   </code>
@@ -21,7 +20,6 @@
   <h2>Play Versus Trivia</h2>
   
   1. Just start the app!
-  <br />
   <code>
       $ npm start  
   </code>
