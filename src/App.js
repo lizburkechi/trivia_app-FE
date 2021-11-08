@@ -82,9 +82,9 @@ function App() {
               type="number"
               id="amount"
               min="1"
-              max="10"
+              max="12"
               step="1"
-              defaultValue={10}
+              defaultValue={8}
               ref={amountEl}
             />
           </div>
@@ -95,7 +95,7 @@ function App() {
         <div className="card-container">
           <TriviaCardList triviaCards={triviaCards} />
         </div>
-        <div className="timer-container">
+        <div className="timer-div">
           <Timer />
         </div>
         </Route>

@@ -14,7 +14,7 @@ const Home = () => {
      
       <div className="teams-btn-div">
       <Link id="play-btn" className="btn btn-primary" to="/play-versus-trivia">
-        Lets Play!
+        PLAY TRIVIA
       </Link>
       </div>
     </div>
