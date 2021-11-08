@@ -4,7 +4,7 @@ import TriviaCardList from "./TriviaCardList";
 import "./app.css";
 import axios from "axios";
 import Timer from "./Timer";
-import Home from "./Home";
+import Home from "./Signup";
 
 function App() {
   const [triviaCards, setTriviaCards] = useState([]);
@@ -60,7 +60,7 @@ function App() {
     <div className="App">
       <Switch>
       <Route exact path="/versus-trivia">
-        <Home />
+        <Signup />
       </Route>
       <Route exact path="/play-versus-trivia">
         <form className="header" onSubmit={handleSubmit}>
