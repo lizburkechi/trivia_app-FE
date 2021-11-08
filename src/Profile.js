@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function Profile() {
+function Profile({ user, setUser }) {
   const [formData, setFormData] = useState({
-    image: "",
-    bio: "",
+    image: user.image,
+    bio: user.bio,
   });
 
   function handleChange(e) {
@@ -15,14 +15,24 @@ function Profile() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // TODO: update the user's profile
+    fetch("http://localhost:3000/me", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((r) => r.json())
+      .then((user) => {
+        setUser(user);
+      });
   }
 
   const { image, bio } = formData;
 
   return (
     <form className="login" onSubmit={handleSubmit}>
-      <h1>Username's Profile</h1>
+      <h1>{user.username}'s Profile</h1>
 
       <label>Profile Image</label>
       <input

@@ -11,8 +11,6 @@ import Profile from "./Profile"
 
 function App() {
   const [user, setUser] = useState(null);
-  console.log(user)
-
   const [triviaCards, setTriviaCards] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -24,7 +22,16 @@ function App() {
       setCategories(r.data.trivia_categories);
     });
   }, []);
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    // GET /me
+    fetch("http://localhost:3000/me")
+      .then((r) => r.json())
+      .then((user) => {
+        // response => set user in state
+        setUser(user);
+      });
+  }, []);
 
   // filter out HTML characters in API questions
   function decodeHtml(str) {
@@ -70,10 +77,14 @@ function App() {
             <Signup />
           </Route>
           <Route exact path="/login">
-            <Login />
+            <Login setUser={setUser} />
           </Route>
           <Route exact path="/profile">
-            <Profile />
+            {user ? (
+              <Profile user={user} setUser={setUser} />
+            ) : (
+              <h1>Please log in to see this page.</h1>
+            )}
           </Route>
       <Route exact path="/gameboard">
         <form className="header" onSubmit={handleSubmit}>

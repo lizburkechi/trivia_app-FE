@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Login() {
+export default function Login({ setUser }) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -17,7 +17,7 @@ export default function Login() {
         })
         .then((r) => r.json())
         .then((user) =>{
-            console.log(user);
+            setUser(user);
         });
       }
 
@@ -30,7 +30,7 @@ export default function Login() {
                   type="text"
                   name="username"
                   autoComplete="off"
-                  value={formData.username}clkear
+                  value={formData.username}
                   onChange={handleChange}
                   className="login-input"
                 />
