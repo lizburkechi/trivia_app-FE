@@ -4,9 +4,14 @@ import TriviaCardList from "./TriviaCardList";
 import "./app.css";
 import axios from "axios";
 import Timer from "./Timer";
-import Home from "./Signup";
+import Signup from "./Signup";
+import Login from "./Login";
+import Navbar from "./Navbar";
 
 function App() {
+  const [user, setUser] = useState(null);
+  console.log(user)
+
   const [triviaCards, setTriviaCards] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -56,13 +61,17 @@ function App() {
   }
 
   return (
-     
-    <div className="App">
-      <Switch>
-      <Route exact path="/versus-trivia">
-        <Signup />
-      </Route>
-      <Route exact path="/play-versus-trivia">
+    <>
+      <Navbar user={user} setUser={setUser} />
+      <main>
+        <Switch>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+      <Route exact path="/gameboard">
         <form className="header" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="category">Select Category</label>
@@ -100,7 +109,8 @@ function App() {
         </div>
         </Route>
       </Switch>    
-    </div>
+    </main>
+    </>
   );
 }
 export default App;

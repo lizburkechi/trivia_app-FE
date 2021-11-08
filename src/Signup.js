@@ -62,12 +62,6 @@ function Signup() {
         value={password}
         onChange={handleChange}
       />
-
-      {errors.map((error) => (
-        <p style={{ color: "red" }} key={error}>
-          {error}
-        </p>
-      ))}
       <input type="submit" value="Signup" />
     </form>
   );
