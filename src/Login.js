@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function Login({ setUser }) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
-      });
+    });
+    const [errors, setErrors] = useState([]);
+    const history = useHistory()
 
       function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,12 +16,28 @@ export default function Login({ setUser }) {
       function handleSubmit(e) {
         e.preventDefault();
         fetch("http://localhost:3000/login", {
-            method: "POST"
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData),
         })
-        .then((r) => r.json())
-        .then((user) =>{
-            setUser(user);
+        .then((r) => {
+          return r.json().then(data => {
+          if (r.ok) {
+            return data
+          } else {
+            throw data
+          }
         });
+      })
+        .then((user) => {
+            setUser(user);
+            history.push("/profile")
+          })
+          .catch((error) => {
+            setErrors(error.errors)
+          });
       }
 
     return (
@@ -43,6 +62,10 @@ export default function Login({ setUser }) {
                   autoComplete="current-password"
                   className="login-input"
                 />
+                {errors.map((error) => (<p style={{ color: "blue" }} key={error}>
+                  {error}
+                  </p>
+                ))}
                 <input type="submit" value="Login" />
             </form>
             <hr />
