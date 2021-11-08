@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
-
-function Signup() {
+function Profile() {
   const [formData, setFormData] = useState({
-    username: "",
     image: "",
-    bio:"",
-    password: "",
+    bio: "",
   });
 
   function handleChange(e) {
@@ -18,21 +15,14 @@ function Signup() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // TODO: update the user's profile
   }
 
-  const { username, image, bio, password } = formData;
+  const { image, bio } = formData;
 
   return (
     <form className="login" onSubmit={handleSubmit}>
-      <h1>Signup</h1>
-      <label>Username</label>
-      <input
-        type="text"
-        name="username"
-        autoComplete="off"
-        value={username}
-        onChange={handleChange}
-      />
+      <h1>Username's Profile</h1>
 
       <label>Profile Image</label>
       <input
@@ -48,23 +38,15 @@ function Signup() {
             ? image
             : "https://cdn.iconscout.com/icon/free/png-512/account-profile-avatar-man-circle-round-user-30452.png"
         }
-        alt={username}
+        alt={"Username"}
       />
 
       <label>Bio</label>
       <textarea name="bio" value={bio} onChange={handleChange} />
 
-      <label>Password</label>
-      <input
-        type="password"
-        name="password"
-        autoComplete="current-password"
-        value={password}
-        onChange={handleChange}
-      />
-      <input type="submit" value="Signup" />
+      <input type="submit" value="Update" />
     </form>
   );
-};
+}
 
-export default Signup;
+export default Profile;
