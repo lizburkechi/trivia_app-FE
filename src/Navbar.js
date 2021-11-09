@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar({ user }) {
+function NavBar({ user, setUser }) {
+
+  function logout() {
+    localStorage.removeItem("token")
+    setUser(null);
+  }
+
   return (
     <div className="nav">
       <div>
@@ -10,8 +16,9 @@ function NavBar({ user }) {
       <div>
         {user ? (
           <>
+            <Link to="/gameboard">Play</Link>
             <Link to="/profile">Profile</Link>
-            <button>Logout</button>
+            <button onClick={logout}>Logout</button>
           </>
         ) : (
           <>

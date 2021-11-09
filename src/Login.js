@@ -7,7 +7,7 @@ export default function Login({ setUser }) {
         password: "",
     });
     const [errors, setErrors] = useState([]);
-    const history = useHistory()
+    const history = useHistory();
 
       function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,25 +18,27 @@ export default function Login({ setUser }) {
         fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
         })
         .then((r) => {
-          return r.json().then(data => {
+          return r.json().then((data) => {
           if (r.ok) {
-            return data
+            return data;
           } else {
-            throw data
+            throw data;
           }
         });
       })
-        .then((user) => {
+        .then((data) => {
+          const { user, token } = data;
+          localStorage.setItem("token", token);
             setUser(user);
-            history.push("/profile")
+            history.push("/profile");
           })
           .catch((error) => {
-            setErrors(error.errors)
+            setErrors(error.errors);
           });
       }
 
@@ -62,13 +64,13 @@ export default function Login({ setUser }) {
                   autoComplete="current-password"
                   className="login-input"
                 />
-                {errors.map((error) => (<p style={{ color: "blue" }} key={error}>
+                {errors.map((error) => (
+                <p style={{ color: "blue" }} key={error}>
                   {error}
-                  </p>
+                </p>
                 ))}
                 <input type="submit" value="Login" />
             </form>
-            <hr />
         </div>
     )
 }

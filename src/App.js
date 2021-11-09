@@ -11,8 +11,6 @@ import Profile from "./Profile"
 
 function App() {
   const [user, setUser] = useState(null);
-  console.log(user)
-
   const [triviaCards, setTriviaCards] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -27,12 +25,24 @@ function App() {
 
   useEffect(() => {
     // GET /me
-    // fetch("http://localhost:3000/me")
-    //   .then((r) => r.json())
-    //   .then((user) => {
-    //     // response => set user in state
-    //     setUser(user);
-    //   });
+    const token = localStorage.getItem("token")
+    fetch("http://localhost:3000/me", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }, 
+    })
+    .then((r) => {
+      return r.json().then((data) => {
+      if (r.ok) {
+        return data;
+      } else {
+        throw data;
+      }
+    });
+  })
+    .then((user) => {
+      setUser(user);
+    });
   }, []);
 
   // filter out HTML characters in API questions
@@ -76,7 +86,7 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/signup">
-            <Signup />
+            <Signup setUser={setUser} />
           </Route>
           <Route exact path="/login">
             <Login setUser={setUser} />
