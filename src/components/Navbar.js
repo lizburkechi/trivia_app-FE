@@ -11,7 +11,7 @@ function NavBar({ user, setUser }) {
   return (
     <div className="nav">
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/versus-trivia">Home</Link>
       </div>
       <div>
         {user ? (

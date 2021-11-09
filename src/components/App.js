@@ -8,6 +8,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import Navbar from "./Navbar";
 import Profile from "./Profile"
+import GameBoard from "./GameBoard"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -23,25 +24,17 @@ function App() {
     });
   }, []);
 
+  // GET #me
   useEffect(() => {
-    // GET /me
-    const token = localStorage.getItem("token")
-    fetch("http://localhost:3000/me", {
+    const token = localStorage.getItem("token");
+
+    axios.get("http://localhost:3000/me", {
       headers: {
-        Authorization: `Bearer ${token}`,
-      }, 
+        Authorization: `Bearer ${token}`
+      },
     })
-    .then((r) => {
-      return r.json().then((data) => {
-      if (r.ok) {
-        return data;
-      } else {
-        throw data;
-      }
-    });
-  })
-    .then((user) => {
-      setUser(user);
+    .then((response) => {
+      setUser(response.data);
     });
   }, []);
 
@@ -95,7 +88,7 @@ function App() {
             {user ? (
               <Profile user={user} setUser={setUser} />
             ) : (
-              <h1>Please log in to see this page.</h1>
+              <h1>Please log in.</h1>
             )}
           </Route>
       <Route exact path="/gameboard">
